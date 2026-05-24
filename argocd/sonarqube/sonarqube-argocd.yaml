@@ -10,9 +10,33 @@ spec:
     repoURL: https://SonarSource.github.io/helm-chart-sonarqube
     chart: sonarqube
     targetRevision: 10.5.0
+
     helm:
-      valueFiles:
-        - values.yaml
+      values: |
+        service:
+          type: ClusterIP
+
+        persistence:
+          enabled: false
+
+        elasticsearch:
+          persistence:
+            enabled: false
+
+        jdbcOverwrite:
+          enable: false
+
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "200m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
+
+        env:
+          - name: SONAR_ES_BOOTSTRAP_CHECKS_DISABLE
+            value: "true"
 
   destination:
     server: https://kubernetes.default.svc
@@ -22,5 +46,6 @@ spec:
     automated:
       prune: true
       selfHeal: true
+
     syncOptions:
       - CreateNamespace=true
