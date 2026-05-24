@@ -1,0 +1,21 @@
+service:
+  type: ClusterIP
+
+persistence:
+  enabled: false
+
+postgresql:
+  enabled: false
+
+resources:
+  requests:
+    memory: "512Mi"
+    cpu: "200m"
+  limits:
+    memory: "1Gi"
+    cpu: "500m"
+
+sonarqube:
+  env:
+    - name: SONAR_ES_BOOTSTRAP_CHECKS_DISABLE
+      value: "true"
