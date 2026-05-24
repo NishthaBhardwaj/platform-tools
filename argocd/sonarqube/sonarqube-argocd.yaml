@@ -17,6 +17,10 @@ spec:
         persistence:
           enabled: true
           size: 2Gi
+        persistence:
+          enabled: false
+        postgresql:
+          enabled: false
 
   destination:
     server: https://kubernetes.default.svc
