@@ -4,8 +4,12 @@ service:
 persistence:
   enabled: false
 
-postgresql:
-  enabled: false
+elasticsearch:
+  persistence:
+    enabled: false
+
+jdbcOverwrite:
+  enable: false
 
 resources:
   requests:
@@ -15,7 +19,6 @@ resources:
     memory: "1Gi"
     cpu: "500m"
 
-sonarqube:
-  env:
-    - name: SONAR_ES_BOOTSTRAP_CHECKS_DISABLE
-      value: "true"
+env:
+  - name: SONAR_ES_BOOTSTRAP_CHECKS_DISABLE
+    value: "true"
