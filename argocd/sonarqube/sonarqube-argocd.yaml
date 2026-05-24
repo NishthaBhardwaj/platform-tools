@@ -13,7 +13,7 @@ spec:
     helm:
       values: |
         service:
-          type: LoadBalancer
+          type: ClusterIP
         persistence:
           enabled: true
           size: 10Gi
