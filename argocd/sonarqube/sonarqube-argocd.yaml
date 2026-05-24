@@ -3,6 +3,7 @@ kind: Application
 metadata:
   name: sonarqube
   namespace: argocd
+
 spec:
   project: default
 
@@ -22,6 +23,12 @@ spec:
         elasticsearch:
           persistence:
             enabled: false
+
+        postgresql:
+          enabled: true
+          primary:
+            persistence:
+              enabled: false
 
         jdbcOverwrite:
           enable: false
