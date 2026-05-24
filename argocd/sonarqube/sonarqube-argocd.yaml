@@ -16,7 +16,7 @@ spec:
           type: ClusterIP
         persistence:
           enabled: true
-          size: 10Gi
+          size: 2Gi
 
   destination:
     server: https://kubernetes.default.svc
