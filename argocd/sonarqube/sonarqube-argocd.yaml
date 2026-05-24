@@ -25,13 +25,7 @@ spec:
             enabled: false
 
         postgresql:
-          enabled: true
-          primary:
-            persistence:
-              enabled: false
-
-        jdbcOverwrite:
-          enable: false
+          enabled: false
 
         resources:
           requests:
@@ -53,6 +47,5 @@ spec:
     automated:
       prune: true
       selfHeal: true
-
     syncOptions:
       - CreateNamespace=true
