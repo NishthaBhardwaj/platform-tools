@@ -15,9 +15,6 @@ spec:
         service:
           type: ClusterIP
         persistence:
-          enabled: true
-          size: 2Gi
-        persistence:
           enabled: false
         postgresql:
           enabled: false
